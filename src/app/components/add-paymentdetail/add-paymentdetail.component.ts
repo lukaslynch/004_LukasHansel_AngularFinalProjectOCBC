@@ -23,7 +23,7 @@ export class AddPaymentdetailComponent implements OnInit {
     })
   }
 
-  constructor(public AuthService: AuthService, private PaymentDetail: PaymentdetailComponent ) { 
+  constructor(public AuthService: AuthService, private PaymentDetail: PaymentdetailComponent) { 
     
   }
 
@@ -84,8 +84,6 @@ export class AddPaymentdetailComponent implements OnInit {
       this.isSubmitted = false;
     }
   }
-
-
 
   ngOnInit(): void {
   }

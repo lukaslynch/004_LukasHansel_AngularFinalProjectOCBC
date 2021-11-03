@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <b style="color: #6A6A6A;">SECURITY CODE</b>
-            <input (change)="handleIsSubmittedState()" type="text" class="form-control" formControlName="securityCode" name="securityCode" id="securityCode" required>
+            <input (change)="handleIsSubmittedState()" type="password" class="form-control" formControlName="securityCode" name="securityCode" id="securityCode" required>
             <span style="color: red;" *ngIf="securityCode && securityCode.touched && securityCode.invalid">
                 securityCode must be 3</span>
         </div>

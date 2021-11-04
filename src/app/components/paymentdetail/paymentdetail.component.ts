@@ -26,9 +26,13 @@ export class PaymentdetailComponent implements OnInit {
   }
 
   deletePaymentDetail(id:number){
-    this.authService.deletePaymentDetail(id).subscribe((res) => {
-      this.getData()
-    })
+    if(confirm(`Are you sure want to delete id: ${id} ?`))
+    {
+      this.authService.deletePaymentDetail(id).subscribe((res) => {
+        this.getData()
+      })
+    }
+    
   }
 
 }

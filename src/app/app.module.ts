@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddPaymentdetailComponent } from './components/add-paymentdetail/add-paymentdetail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdatePaymentdetailComponent } from './components/update-paymentdetail/update-paymentdetail.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UpdatePaymentdetailComponent } from './components/update-paymentdetail/
     NavbarComponent,
     AddPaymentdetailComponent,
     UpdatePaymentdetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

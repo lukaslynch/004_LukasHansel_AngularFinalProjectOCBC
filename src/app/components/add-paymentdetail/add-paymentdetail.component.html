@@ -2,27 +2,27 @@
     <form [formGroup]="form.inputData" (ngSubmit)="handlePaymentRegisterForm()">
         <div class="form-group">
             <b style="color: #6A6A6A;">CARD OWNER NAME</b>
-            <input (change)="handleIsSubmittedState()" type="text" class="form-control" formControlName="cardOwnerName" name="cardOwnerName" id="cardOwnerName" required>
+            <input placeholder="Full Name" type="text" class="form-control" formControlName="cardOwnerName" name="cardOwnerName" id="cardOwnerName" required>
             <span style="color: red;" *ngIf="cardOwnerName && cardOwnerName.touched && cardOwnerName.invalid">
                 Masukkan nama!</span>
         </div>
         <div class="form-group">
             <b style="color: #6A6A6A;">CARD NUMBER</b>
-            <input (change)="handleIsSubmittedState()" type="text" class="form-control" formControlName="cardNumber" name="cardNumber" id="cardNumber" required>
+            <input (change)="handleIsSubmittedState()" placeholder="16 digit card number" type="text" class="form-control" formControlName="cardNumber" name="cardNumber" id="cardNumber" required>
             <span style="color: red;" *ngIf="cardNumber && cardNumber.touched && cardNumber.invalid">
-                Card number should be 12</span>
+                Card number should be 12 and Must Be Number</span>
         </div>
         <div class="form-group">
             <b style="color: #6A6A6A;">SECURITY CODE</b>
-            <input (change)="handleIsSubmittedState()" type="password" class="form-control" formControlName="securityCode" name="securityCode" id="securityCode" required>
+            <input (change)="handleIsSubmittedState()" type="password" class="form-control" formControlName="securityCode" name="securityCode" id="securityCode" placeholder="3 Digit security code" required>
             <span style="color: red;" *ngIf="securityCode && securityCode.touched && securityCode.invalid">
-                securityCode must be 3</span>
+                securityCode must be 3 and Must Be Number</span>
         </div>
         <div class="form-group">
             <b style="color: #6A6A6A;">VALID THROUGH</b>
-            <input (change)="handleIsSubmittedState()" type="text" class="form-control" formControlName="expirationDate" name="expirationDate" id="expirationDate" required>
+            <input (change)="handleIsSubmittedState()" placeholder="MM/YY" type="text" class="form-control" formControlName="expirationDate" name="expirationDate" id="expirationDate" required>
             <span style="color: red;" *ngIf="expirationDate && expirationDate.touched && expirationDate.invalid">
-                expirationDate must be 5 char</span>
+                expirationDate must be 5 char, use ( / ) separator</span>
         </div>
 
         <div>

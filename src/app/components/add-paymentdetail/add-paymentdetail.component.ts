@@ -16,10 +16,25 @@ export class AddPaymentdetailComponent implements OnInit {
   errorsexpirationDate= { expirationDate: {} }
   form = {
     inputData: new FormGroup({
-      cardOwnerName: new FormControl('',[Validators.required,Validators.minLength(2)]),
-      cardNumber: new FormControl('',[Validators.required,Validators.minLength(12)]),
-      securityCode: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(3)]),
-      expirationDate: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(5)]),
+      cardOwnerName: new FormControl('',[
+        Validators.required,
+        Validators.minLength(2)
+      ]),
+      cardNumber: new FormControl('',[
+        Validators.required,
+        Validators.minLength(12),
+        Validators.pattern("^([0-9]*)$")
+      ]),
+      securityCode: new FormControl('',[
+        Validators.required,Validators.minLength(3),
+        Validators.maxLength(3),
+        Validators.pattern("^([0-9]*)$")
+      ]),
+      expirationDate: new FormControl('',[
+        Validators.required,Validators.minLength(5),
+        Validators.maxLength(5),
+        Validators.pattern("^(0[1-9]|1[0-2])\/?([0-9]{2})$")
+      ]),
     })
   }
 
@@ -75,8 +90,10 @@ export class AddPaymentdetailComponent implements OnInit {
   isSubmitted = false
 
   handlePaymentRegisterForm(){
-    this.isSubmitted = true
-    this.validateForm()
+    if(confirm(`Are you sure want to add ?`)){
+      this.isSubmitted = true
+      this.validateForm()
+    }
   }
 
   handleIsSubmittedState () {
